@@ -5,9 +5,7 @@
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location">
-            <value>classpath:database.properties</value>
-        </property>
+        <property name="location" value="classpath:database.properties" />
     </bean>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -19,9 +17,7 @@
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 
-        <property name="dataSource">
-            <ref bean="dataSource"/>
-        </property>
+        <property name="dataSource" ref="dataSource" />
 
         <property name="hibernateProperties">
             <props>
